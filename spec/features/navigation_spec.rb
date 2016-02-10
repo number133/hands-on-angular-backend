@@ -1,0 +1,12 @@
+require 'spec_helper'
+require 'rails_helper'
+
+describe "Navigation Menu", js:true do
+    it "changes active menu element depending on route" do
+       visit '/'
+       expect(find('.active').find('a').text).to eq('Home')
+       
+       click_lick('Edges')
+       expect(find('.active').find('a').text).to eq('Edges')
+    end
+end

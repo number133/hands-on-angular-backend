@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     post '/api/logout' => 'sessions#destroy'
   end
   namespace :api do
-    resources :edges, only: [:index]
+    resources :edges, only: [:index, :create, :destroy]
     resources :users, only: [:index]
+    resources :categories, only: [:index]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
